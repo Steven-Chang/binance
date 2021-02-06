@@ -36,9 +36,6 @@ module Binance
         # #price
         { name: :price, client: :public,
           action: :get, endpoint: :price },
-        # #all_prices
-        { name: :all_prices, client: :public,
-          action: :get, endpoint: :price },
         # #book_ticker
         { name: :book_ticker, client: :public,
           action: :get, endpoint: :book_ticker },
@@ -102,7 +99,11 @@ module Binance
           action: :get, endpoint: :asset_detail },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+
+        # Margin Account/Trade
+        { name: :margin_account_new_order, client: :signed,
+          action: :post, endpoint: :margin_account_new_order }
       ].freeze
     end
   end
